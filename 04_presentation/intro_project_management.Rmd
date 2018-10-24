@@ -225,6 +225,8 @@ layout: true
 
 .center[<img src="./diagrams/github_desktop.png" height="300px" width="640px" />]
 
+This won't make it into the final presentation
+
 
 class: center, middle
 
