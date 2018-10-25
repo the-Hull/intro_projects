@@ -1,8 +1,7 @@
 ---
 title: "Project Management"
-subtitle: "⚔<br/>with xaringan"
-author: "Yihui Xie"
-date: "2016/12/12 (updated: `r Sys.Date()`)"
+author: "Alexander Hurley"
+date: "2018/10/25"
 output:
   xaringan::moon_reader:
     css: ["default", "metropolis", "metropolis-fonts"]
@@ -19,21 +18,6 @@ options(htmltools.dir.version = FALSE)
 
 
 ```
-
-```{r funcs, echo=FALSE}
-
-
-
-#Color Format
-colt  <-  function(x,color){
-
-    paste("<font color='",color,"'>",x,"</font>",sep="")
-
-}
-
-
-```
-
 
 
 class: title-slide, left, middle
@@ -78,17 +62,14 @@ Analyses can be tough.
 
 # Overview
 
----
+--
 
-# Overview
 
 1. Git
 
 2. GitHub (Website & Desktop)
 
-3. RStudio
-
-4. Simple Workflow
+3. Simple workflow with RStudio
 
 
 ---
@@ -193,13 +174,13 @@ layout: true
 
 - issue tracker
 - project management
-- exposure (_Readme.md_)
+- exposure (_Readme.md_; great example from [`drake`](https://github.com/ropensci/drake)) 
 
 ---
 
 ## First Steps
 
-- Register
+- Register with  [GitHub](https::/github.com)
 - Download [GitHub Desktop](https://desktop.github.com/)
 - Create new repository
 
@@ -212,179 +193,285 @@ layout: true
 
 ## First Steps
 
-- Register
+- Register with  [GitHub](https::/github.com)
 - Download [GitHub Desktop](https://desktop.github.com/)
-- Create new repository
-
+- Create new repository 
 --
 
 - Open *GitHub Desktop*, follow instructions
-- Clone repository to your local machine
-
+- `clone` repository to your local machine
 --
 
 .center[<img src="./diagrams/github_desktop.png" height="300px" width="640px" />]
 
+---
+
+## First Steps
+
+- Register with  [GitHub](https::/github.com)
+- Download [GitHub Desktop](https://desktop.github.com/)
+- Create new repository
+- Open *GitHub Desktop*, follow instructions
+- `clone` repository to your local machine
+--
+
+- commence work, save, `commit`, `push`
+--
+
+.center[<img src="./diagrams/github_desktop_commit.png" height="300px" width="800px" />]
 
 
-class: center, middle
 
-# xaringan
+---
 
-### /ʃæ.'riŋ.ɡæn/
+
+## First Steps
+
+- Register with  [GitHub](https::/github.com)
+- Download [GitHub Desktop](https://desktop.github.com/)
+- Create new repository
+- Open *GitHub Desktop*, follow instructions
+- `clone` repository to your local machine
+- commence work, save, `commit`, `push`
+--
+
+.center[<img src="./diagrams/github_desktop_commit_b.png" height="300px" width="800px" />]
+
+---
+
+
+
+## First Steps
+
+- Register with  [GitHub](https::/github.com)
+- Download [GitHub Desktop](https://desktop.github.com/)
+- Create new repository
+- Open *GitHub Desktop*, follow instructions
+- `clone` repository to your local machine
+- commence work, save, `commit`, `push`
+
+
+### Some other things..
+
+- if collaborating: always `fetch` + `pull` before pushing (be up to date and prevent conflicts)
+- `commit` after a meaningful addition or change has been made
+- always use clear messages (try to make future-you not hate current-you)
+
+---
+layout: false
+class: inverse, center, middle
+
+# GitHub Desktop
+
+Quick live-demo
 
 ---
 class: inverse, center, middle
 
-# Get Started
+# GitHub and Projects
+
+---
+layout: true
+
+# Github and Projects
 
 ---
 
+## Capabilities
 
-# Hello Ninja
+- control access and contributors
+- provide easily accessible documentation (Readme's, Wiki pages, data codebooks)
+- Can host project websites (e.g. [aglhurley](https::/aglhurley.rbind.io))
 
-As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
+--
 
-1. The [remark.js](https://remarkjs.com) library;
 
-1. The **xaringan** package;
+- manage tasks
+- open/track issues (new features, old bugs, fieldwork) and assign individuals
+- can be used for open peer review (e.g. [`hddtools`](https://github.com/ropensci/onboarding/issues/73))
 
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
+--
+
+
+## Examples:
+
+(Check issue section)
+
+- [the-hull/saddleworth](https://github.com/the-Hull/saddleworth) (private)
+- [cboettig/nonparametric-bayes](https://github.com/cboettig/nonparametric-bayes)
+- [bpbond/cpcrw_incubation](https://github.com/bpbond/cpcrw_incubation/)
+
+---
+## Project Management
+
+.center[<img src="./diagrams/github_projects.png" height="500px" width="750px" />]
+
 
 ---
 
-# remark.js
-
-You can see an introduction of remark.js from [its homepage](https://remarkjs.com). You should read the [remark.js Wiki](https://github.com/gnab/remark/wiki) at least once to know how to
-
-- create a new slide (Markdown syntax<sup>*</sup> and slide properties);
-
-- format a slide (e.g. text alignment);
-
-- configure the slideshow;
-
-- and use the presentation (keyboard shortcuts).
-
-It is important to be familiar with remark.js before you can understand the options in **xaringan**.
-
-.footnote[[*] It is different with Pandoc's Markdown! It is limited but should be enough for presentation purposes. Come on... You do not need a slide for the Table of Contents! Well, the Markdown support in remark.js [may be improved](https://github.com/gnab/remark/issues/142) in the future.]
-
----
-background-image: url(`r xaringan:::karl`)
-background-size: cover
-class: center, bottom, inverse
-
-# I was so happy to have discovered remark.js!
-
----
 class: inverse, middle, center
 
-# Using xaringan
+Quick live demo
+
+---
+layout: false
+class: inverse, middle, center
+
+# RStudio workflow
+
+
+---
+layout: true
+
+# Rstudio workflow
 
 ---
 
-# xaringan
+## Main goals for a project:
 
-Provides an R Markdown output format `xaringan::moon_reader` as a wrapper for remark.js, and you can use it in the YAML metadata, e.g.
+1. Coherent and easy-to-navigate structure (folders)
 
-```yaml
----
-title: "A Cool Presentation"
-output:
-  xaringan::moon_reader:
-    yolo: true
-    nature:
-      autoplay: 30000
----
-```
+2. Portable (packages, file paths)
 
-See the help page `?xaringan::moon_reader` for all possible options that you can use.
+3. Version controlled
+
+3. Well documented (Scripts, literate programming for analyses and/or codebooks)
+
+--
+
+**RStudio can allow integrating all aspects of your workflow**.
 
 ---
 
-# remark.js vs xaringan
-
-Some differences between using remark.js (left) and using **xaringan** (right):
+## Project Structure
 
 .pull-left[
-1. Start with a boilerplate HTML file;
+- Set-up in _RStudio_  
+  (`File` $\rightarrow$ `New Project`)
+    + multiple options (e.g. _from Version Control_ `  
+    clones` directly; requires standalone git installation)
+    
+- Create suitable folder structure
+    + R Package structure is common
+]
+    
+    
+.center[![](./diagrams/rstudio_folders.png)]
+        
 
-1. Plain Markdown;
+---
 
-1. Write JavaScript to autoplay slides;
 
-1. Manually configure MathJax;
+## Project Structure
 
-1. Highlight code with `*`;
+.pull-left[
+- Set-up in _RStudio_  
+  (`File` $\rightarrow$ `New Project`)
+    + multiple options (e.g. _from Version Control_ `  
+    clones` directly; requires standalone git installation)
+    
+- Create suitable folder structure
+    + R Package structure is common
+    + **but adjust as needed**
+]
+    
+.center[![](./diagrams/rstudio_folders_personal.png)]        
 
-1. Edit Markdown source and refresh browser to see updated slides;
+---
+    
+## Portability
+
+- Use relative file paths in scripts / documents
+
+.center[
+_C:/welcome_to_my_world/data_    `r emo::ji("unamused")` `r emo::ji("tired")`
+
+
+
+_./data/_ (dot refers to project's root) `r emo::ji("grinning")`
+
+_../other_project_ (dot-dot refers to project's parent) `r emo::ji("nerd")`
 ]
 
-.pull-right[
-1. Start with an R Markdown document;
 
-1. R Markdown (can embed R/other code chunks);
+- Isolate or list the software you use (keep track of versions)
 
-1. Provide an option `autoplay`;
+  + Microsoft's `snapshot` package
+  + RStudio's `packrat` package (integrated into _RStudio_)
+  + `sessionInfo()` at document end
+  
 
-1. MathJax just works;<sup>*</sup>
+  
+---
+  
+## Documentation / Write-up
 
-1. Highlight code with `{{}}`;
+- Plain text can be version controlled, rich-text (_docx_, _odt_) cannot
 
-1. The RStudio addin "Infinite Moon Reader" automatically refreshes slides on changes;
-]
+- Markdown (_.md_) common
 
-.footnote[[*] Not really. See next page.]
+- RMarkdown for literate programming (`knitr` package)
+
+--
+
+## Example
+
+Try `File` $\rightarrow$ `New File` $\rightarrow$ `R Markdown`
+
+and hit the _knit_ button, or press `ctrl`+`shift`+`k` 
 
 ---
 
-# Math Expressions
+## Documentation / Write-up
 
-You can write LaTeX math expressions inside a pair of dollar signs, e.g. &#36;\alpha+\beta$ renders $\alpha+\beta$. You can use the display style with double dollar signs:
+- Use literate programming through `knitr`
+
+```{r echo=TRUE, eval=TRUE}
+
+# Rcode stored and evaluated as document is rendered
+nrow_iris <- nrow(iris)
+
+# call in-line using `r nrow_iris`
+
 
 ```
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-```
 
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
 
-Limitations:
+.center[ _The data set has a total of `r nrow_iris` observations_]
 
-1. The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
+--
+    
+- There are many available output formats and templates
 
-1. There should not be spaces after the opening `$` or before the closing `$`.
+  + html
+  + pdf / latex (e.g. $2\delta x^2yz+5$ )
+  + word
+  + templates for many journals (e.g. `rticles` package)
+  
+--
 
-1. Math does not work on the title slide (see [#61](https://github.com/yihui/xaringan/issues/61) for a workaround).
+- Thinking "Help!"?  
+Try this [Definitive Guide](https://bookdown.org/yihui/rmarkdown/) by (Y. Xie, J. Allaire, G. Grolemund) 
+
 
 ---
 
-# R Code
+class: inverse, middle, center
 
-```{r comment='#'}
-# a boring regression
-fit = lm(dist ~ 1 + speed, data = cars)
-coef(summary(fit))
-dojutsu = c('地爆天星', '天照', '加具土命', '神威', '須佐能乎', '無限月読')
-grep('天', dojutsu, value = TRUE)
-```
+Quick live demo
 
 ---
 
-# R Plots
+layout: false
+class: inverse, middle, center
 
-```{r cars, fig.height=4, dev='svg'}
-par(mar = c(4, 4, 1, .1))
-plot(cars, pch = 19, col = 'darkgray', las = 1)
-abline(fit, lwd = 2)
-```
 
----
+**Project management:**
 
-# Tables
+.center[<img src="https://media.giphy.com/media/dJGYFScvBjfRabiH7m/giphy.gif" height="300px" width="320x" />]
 
-If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
 
-```{r}
-knitr::kable(head(iris), format = 'html')
-```
 
+** Thanks for listenining!  **
+
+Ask me 3+ questions!
