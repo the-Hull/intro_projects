@@ -356,7 +356,7 @@ layout: true
 ]
     
     
-.center[![](./diagrams/rstudio_folders.png)]
+.center[![](./diagrams/rstudio_folders.PNG)]
         
 
 ---
@@ -375,7 +375,7 @@ layout: true
     + **but adjust as needed**
 ]
     
-.center[![](./diagrams/rstudio_folders_personal.png)]        
+.center[![](./diagrams/rstudio_folders_personal.PNG)]        
 
 ---
     
